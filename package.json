@@ -1,0 +1,25 @@
+{
+  "name": "wifigroups",
+  "version": "1.0.0",
+  "description": "wifi groups and research",
+  "main": "server.js",
+  "scripts": {
+    "test": "hello w",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanveer12332/wafi.git"
+  },
+  "author": "Muhammad Tanveer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanveer12332/wafi/issues"
+  },
+  "homepage": "https://github.com/tanveer12332/wafi#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "mongojs": "^2.4.0"
+  }
+}

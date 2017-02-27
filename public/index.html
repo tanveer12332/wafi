@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Wafi RealEstate Project</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body ng-app="contactapp">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container" ng-controller="app">
+            <div class="row">
+                <div class="jumbotron"> <h1>Contact List app</h1></div>
+                 <p>{{fromFactory}}</p>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="Name">Name</label>
+                            <input type="text" class="form-control" id="Name" placeholder="Name" ng-model="contact.name">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="Price">Price</label>
+                            <input type="text" class="form-control" id="Price" placeholder="Price" ng-model="contact.price">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="Qty">Qty</label>
+                            <input type="text" class="form-control" id="Qty" placeholder="Qty" ng-model="contact.qty">
+                        </div>
+                    </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="Picture">Picture</label>
+                            <input type="file" class="form-control" id="Picture" placeholder="Picture" ng-model="contact.pic">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="btn-group">
+                                <button class="btn btn-primary" ng-click="saveContactlist()">Add Contact</button>
+                                <button class="btn btn-warning" ng-click="upateContactlist()">Update</button>
+                        </div>
+                    </div>
+                    
+                     <div class="clearfix"></div>
+                     <div class="well-sm"></div>
+                        <table class="table table-bordered table-striped table-condensed">
+                            <colgroup>
+                            <col />
+                             <col />
+                            <col />
+                            <col />
+                            <col width="6%"/>
+                            <col width="6%"/>
+                            </colgroup>
+                            <thead>
+                                <tr> 
+                                    <th>Picture</th>
+                                    <th>Name</th>
+                                    <th>Price</th> 
+                                    <th>Qty</th>
+                                    <th colspan="2">Action</th>
+                                </tr> 
+                            </thead> 
+                            <tbody> 
+                                <tr ng-repeat="contact in contactlist">
+                                    <td><img ngsrc="{{contact.pic }}"/></td>
+                                    <td>{{contact.name }}</td>
+                                    <td>{{contact.price}}</td>
+                                    <td>{{contact.qty}}</td>
+                                    <td><a href="javascript:void(0)" class="btn btn-warning" ng-click="editContactlist(contact._id)">Edit</a></td>
+                                    <td><a href="javascript:void(0)" class="btn btn-danger" ng-click="deleteContactlist(contact._id)">Delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+            </div>
+        </div>
+        
+        <script src="assets/js/angular.min.js"></script>
+        <script src="controllers/controller.js"></script>
+          <script src="services/service.js"></script>
+    </body>
+</html>
