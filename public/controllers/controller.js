@@ -1,19 +1,20 @@
 var appcontactlist = angular.module('contactapp', []);
 
 appcontactlist.controller('app', function($scope, $http,testFactory){
-     $scope.contact = "";
+     $scope.contact = {};
   init();
 
       function init(){
           testFactory.getContactlist().then(function(data, status){
              // console.log(data);
               $scope.contactlist = data.data;
+			  $scope.contact = {};
           });
      };
  /*   $scope.getContactlist = function(){
     $http.get('/contactlist').then(function(responce){
         $scope.contactlist = responce.data;
-       // $scope.contact = "";
+      $scope.contact = "";
     });
 }*/
 
